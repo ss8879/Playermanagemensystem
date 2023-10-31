@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Player Details</title>
+    <link rel="stylesheet" type="text/css" href="ply.css">
+    <style>
+        body {
+            background-image: url('cric.jpg'); /* Replace 'background.jpg' with the path to your image */
+            background-size: cover; /* Scale the image to cover the entire background */
+            background-repeat: no-repeat; /* Prevent image from repeating */
+            background-attachment: fixed; /* Fix the background when scrolling */
+        }
+    </style>
+</head>
+<body>
+    <h1>Player Details</h1>
+    <button id="viewButton">View Player Details</button>
+    <button id="addButton">Add Player Details</button>
+    </div>
+    <div id="player-details-form">
+        <h2>Add Player Details</h2>
+        <form id="playerForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required><br>
+
+            <label for="number">Number:</label>
+            <input type="text" id="number" required><br>
+
+            <label for="age">Age:</label>
+            <input type="text" id="age" name="age"><br>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="text" id="dob" name="dob"><br>
+
+            <label for="playerType">Batsman/Bowler/All-Rounder:</label>
+            <select id="playerType" name="playerType">
+                <option value="Batsman">Batsman</option>
+                <option value="Bowler">Bowler</option>
+                <option value="All-Rounder">All-Rounder</option>
+            </select><br>
+
+            <label for="wicketkeeper">Wicketkeeper (Yes/No):</label>
+            <select id="wicketkeeper" name="wicketkeeper">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br>
+
+            <label for="batsmanBowlerType">Type of Batsman/Bowler:</label>
+            <input type="text" id="batsmanBowlerType" name="batsmanBowlerType"><br>
+
+            <label for="totalWickets">Total Number of Wickets:</label>
+            <input type="text" id="totalWickets" name="totalWickets"><br>
+
+            <label for="totalRuns">Total Number of Runs:</label>
+            <input type="text" id="totalRuns" name="totalRuns"><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        const viewButton = document.getElementById('viewButton');
+        const addButton = document.getElementById('addButton');
+        const playerForm = document.getElementById('playerForm');
+        const playerDetailsForm = document.getElementById('player-details-form');
+        const playerDetails = document.getElementById('player-details');
+
+        addButton.addEventListener('click', () => {
+            playerDetailsForm.style.display = 'block';
+        });
+
+        playerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Collect the player details from the form
+            const formData = new FormData(playerForm);
+
+            // Send the data to the server using a POST request
+            fetch('add_player.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display the added player details
+                playerDetails.innerHTML = `
+                    <h2>Player Details</h2>
+                    <p>Name: ${data.name}</p>
+                    <p>Number: ${data.number}</p>
+                    <p>Age: ${data.age}</p>
+                    <p>Date of Birth: ${data.dob}</p>
+                    <p>Player Type: ${data.playerType}</p>
+                    <p>Wicketkeeper: ${data.wicketkeeper}</p>
+                    <p>Type of Batsman/Bowler: ${data.batsmanBowlerType}</p>
+                    <p>Total Wickets: ${data.totalWickets}</p>
+                    <p>Total Runs: ${data.totalRuns}</p>
+                `;
+            });
+        });
+
+        viewButton.addEventListener('click', () => {
+            // Hide the add player form
+            playerDetailsForm.style.display = 'none';
+
+            // Prompt the user for player name and number
+            const playerName = prompt('Enter Player Name:');
+            const playerNumber = prompt('Enter Player Number:');
+
+            if (playerName && playerNumber) {
+                playerDetails.style.display = 'block';
+                playerDetails.innerHTML = 'Loading...';
+
+                // Send the name and number to the server
+                fetch(`get_player.php?name=${playerName}&number=${playerNumber}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.error) {
+                            // Player not found
+                            playerDetails.innerHTML = 'No player found.';
+                        } else {
+                            // Display the retrieved player details
+                            playerDetails.innerHTML = `
+                                <h2>Player Details</h2>
+                                <p>Name: ${data.name}</p>
+                                <p>Number: ${data.number}</p>
+                                <p>Age: ${data.age}</p>
+                                <p>Date of Birth: ${data.dob}</p>
+                                <p>Player Type: ${data.playerType}</p>
+                                <p>Wicketkeeper: ${data.wicketkeeper}</p>
+                                <p>Type of Batsman/Bowler: ${data.batsmanBowlerType}</p>
+                                <p>Total Wickets: ${data.totalWickets}</p>
+                                <p>Total Runs: ${data.totalRuns}</p>
+                            `;
+                        }
+                    });
+            }
+        });
+    </script>
+</body>
+</html>

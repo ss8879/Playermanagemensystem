@@ -1,0 +1,210 @@
+.player-details-form
+{
+    position:absolute;
+    top:150px;
+    left:35%;
+    width: 450px;
+    height: 460px;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+    background: #fff;
+    border-radius:15px;
+    font-size: large;
+}
+#close{
+    position:absolute;
+    left:95%;
+    margin: 10px 0;
+    padding:15px;
+    background-color:rgb(174, 203, 108);
+    border-color: rgb(174, 203, 108);
+    border:0px solid;
+    color:#7e7f85;
+    font-size: 20px;
+}
+#name{
+    position:relative;
+    margin-bottom: 15px;
+    top: 40px;
+    margin-left:10px;
+}
+#number{
+    position:relative;
+    margin-bottom: 15px;
+    top: 40px;
+    margin-left:10px;
+}
+#age{
+    position:relative;
+    margin-bottom: 10px;
+    top: 40px;
+    margin-left:10px;
+}
+#dob{
+    position:relative;
+    margin-bottom: 10px;
+    top: 40px;
+    margin-left:10px;
+}
+#playerType{
+    position:relative;
+    margin-bottom: 10px;
+    top: 40px;
+    margin-left:10px;
+}
+#BatsmanType{
+    position:relative;
+    margin-bottom: 10px;
+    top: 40px;
+    margin-left:10px;
+}
+#BowlerType{
+    position:relative;
+    margin-bottom: 10px;
+    top: 40px;
+    margin-left:10px;
+}
+#totalWickets{
+    position:relative;
+    margin-bottom: 10px;
+    top: 40px;
+    margin-left:10px;
+}
+#totalruns{
+    position:relative;
+    margin-bottom: 10px;
+    top: 40px;
+    margin-left:10px;
+}
+#wicketkeeper{
+    position:relative;
+    margin-bottom: 15px;
+    top: 40px;
+    margin-left:10px;
+}
+#namel1{
+    position:relative;
+    margin-bottom: 15px;
+    top: 40px;
+    margin-left:10px;
+}
+#numberl1{
+    position:relative;
+    margin-bottom: 15px;
+    top: 40px;
+    margin-left:10px;
+}
+#age1{
+    position:relative;
+    margin-bottom: 10px;
+    top: 40px;
+    margin-left:10px;
+}
+#dob1{
+    position:relative;
+    margin-bottom: 10px;
+    top: 40px;
+    margin-left:10px;
+}
+#playerType1{
+    position:relative;
+    margin-bottom: 10px;
+    top: 40px;
+    margin-left:10px;
+}
+#BatsmanType1{
+    position:relative;
+    margin-bottom: 10px;
+    top: 40px;
+    margin-left:10px;
+}
+#BowlerType1{
+    position:relative;
+    margin-bottom: 10px;
+    top: 40px;
+    margin-left:10px;
+}
+#totalWickets1{
+    position:relative;
+    margin-bottom: 10px;
+    top: 40px;
+    margin-left:10px;
+}
+#totalruns1{
+    position:relative;
+    margin-bottom: 10px;
+    top: 40px;
+    margin-left:10px;
+}
+#wicketkeeper1{
+    position:relative;
+    margin-bottom: 15px;
+    top: 40px;
+    margin-left:10px;
+}
+#submit{
+    position:relative;
+    margin-bottom: 10px;
+    top: 50px;
+    margin-left:10px; 
+    font-size: medium;
+}
+#viewdetailsform{
+    position:absolute;
+    top:150px;
+    left:35%;
+    width: 400px;
+    height: 230px;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+    background: #fff;
+    border-radius:15px;
+    margin-bottom: 15px;
+    font-size: large;  
+}
+#name1{
+    position:relative;
+    margin-bottom: 10px;
+    top: 30px;
+    margin-left:10px;    
+}
+#number1{
+    position:relative;
+    margin-bottom: 10px;
+    top: 30px;
+    margin-left:10px; 
+}
+#playerdetails1{
+    position:relative;
+    margin-bottom: 10px;
+    top: 10px;
+    margin-left:25%; 
+}
+#submit1{
+    position:relative;
+    margin-bottom: 10px;
+    top: 40px;
+    margin-left:10px; 
+    font-size: medium; 
+}
+#viewbutton{
+    top:150px;
+    position:relative;
+    height:50px; 
+    font-size: medium;
+    background: rgb(48, 170, 181);
+    text-align: center;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    margin-left:50px;
+    width:15%;
+}
+#addbutton{
+    top:150px;
+    position:relative;
+    font-size: medium; 
+    height:50px; 
+    background: rgb(48, 170, 181);
+    text-align: center;
+    border-radius: 20px;
+    width:15%;
+    margin-left:50px;
+}

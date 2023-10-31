@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="ply.css">
+        
+        <style>
+            body {
+                background-image: url('cric.jpg'); 
+                background-size: cover; 
+                background-repeat: no-repeat;
+            }
+        </style>
+    </head>
+    <body>
+        <button type="button" id="close" onclick="hclose()">X</button>
+        <button type="button" id="viewbutton">View player details</button>
+        <br>
+        <button type="button" id="addButton">Add player details</button>
+        <div id="player-details-form" style="display:none;">
+            <form id="playerForm"class="player-details-form" method="post" action="add_player.php">
+                    <label id="namel1">Name:</label>
+                    <input type="text" id="name" name="name"><br>                
+                    <label id="numberl1">Number:</label>
+                    <input type="text" id="number" name="number"><br>                   
+                    <label id="age1">Age:</label>
+                    <input type="text" id="age" name="age"><br>                
+                    <label id="dob1">Date of birth:</label>
+                    <input type="text" name="dob" id="dob"><br>           
+                    <label id="playerType1">Player role:</label>
+                    <select id="playerType" name="playerType">
+                        <option value="Batsman">Batsman</option>
+                        <option value="Bowler">Bowler</option>
+                        <option value="All-Rounder">All-Rounder</option>
+                    </select><br> 
+                    <label id="BatsmanType1">Type of Batsman:</label>
+                    <input type="text" id="BatsmanType" name="BatsmanType"><br>
+                    <label id="BowlerType1">Type of Bowler:</label>
+                    <input type="text" id="BowlerType" name="BowlerType"><br>                   
+                    <label id="totalwickets1">Number of wickets:</label>
+                    <input type="text" id="totalWickets" name="totalWickets"><br>                   
+                    <label id="totalruns1">Number of runs:</label>
+                    <input type="text" id="totalRuns" name="totalRuns"><br>                    
+                    <label id="wicketkeeper1">Wicketkeeper:</label>
+                    <select id="wicketkeeper" name="wicketkeeper">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select><br>                   
+                    <button type="submit" id="submit">Submit</button>
+                </form>   
+        </div>
+        <div id="viewdetailsform" style="display:none">
+            <h2 id ="playerdetails1">Player details</h2>
+            <form method="post" action="get_player.php">
+                <p id="name1">Name: <input type="text" name="name1"><br></p>
+                <p id="number1">Number: <input type="text" name="number1"></p>
+                <button type="submit" id="submit1" name="submit1">Submit</button>
+            </form>
+        </div>
+        <script src="web.js"></script>
+    </body>
+</html>
